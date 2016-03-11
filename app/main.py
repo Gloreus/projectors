@@ -1,9 +1,17 @@
-print(__name__)
+from flask import Flask
+from flask import render_template
+import data
+from config import  DevelopConfig
 
-a=2
 
-if a==2:
-    print(a)
-    for i in range(10):
-        print(i)
-    
+app = Flask(__name__)
+app.config.from_object(DevelopConfig)
+
+
+@app.route('/')
+def hello_world():
+    return render_template('base.html', repo = data.get_repo())
+
+
+if __name__ == '__main__':
+    app.run()

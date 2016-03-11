@@ -39,7 +39,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/slava/Документы/Python/EG/PY"
+VIRTUAL_ENV="/home/slava/PycharmProjects/EG/PY"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
