@@ -8,6 +8,7 @@ class Config(object):
     CSRF_ENABLED = True
     WTF_CSRF_SECRET_KEY = 'dsofpkoasodksap'
     SECRET_KEY = 'zxczxasdsad'
+    REPO_ROOT = os.path.join('..', 'REPO')
 
 
 class ProductionConfig(Config):

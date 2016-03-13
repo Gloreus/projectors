@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
 import data
-from config import  DevelopConfig
+from config import DevelopConfig
 
 
 app = Flask(__name__)
