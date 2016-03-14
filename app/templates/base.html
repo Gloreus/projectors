@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проектор</title>
+    <link rel="stylesheet" href="static/css/app.min.css">
+  </head>
+  <body>
+    <header>
+        <h1>Проектор</h1>
+    </header>
+
+    <div class="row">
+      <aside>
+        {% block left_side %}
+          <h2>Управление</h2>
+          <ul class="menu vertical">
+            <li><a href="#">One</a></li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>
+            <li><a href="#">Four</a></li>
+          </ul>
+        {% endblock %}
+      </aside>
+
+      <article>
+        {% block content %}
+
+        {% endblock %}
+      </article>
+    </div>
+    <footer>
+      (c) 2016 ExpressCredit
+    </footer>
+
+<!--
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/what-input/what-input.js"></script>
+    <script src="bower_components/foundation-sites/dist/foundation.js"></script>
+    <script src="js/app.js"></script>
+-->
+  </body>
+</html>
