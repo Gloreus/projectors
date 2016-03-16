@@ -5,7 +5,7 @@ import os
 import time
 
 
-def get_repo():
+def get_repo_list():
     path = current_app.config.get('REPO_ROOT', '')
 
     dirs = [(os.path.join(path, d), d) for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]
@@ -23,8 +23,21 @@ def get_repo():
                     pass
             rep_info["name"] = f
             rep_info["desc"] = repo.description
+            rep_info["path"] = p
 
             res.append(rep_info)
         except (InvalidGitRepositoryError, NoSuchPathError) as e:
+            print(e)
+    return res
+
+
+def get_repo_info(repo_name=''):
+    res = []
+    path = current_app.config.get('REPO_ROOT', '')
+
+    try:
+       repo = Repo(os.path.join(path, repo_name))
+       res = repo.tree()
+    except (InvalidGitRepositoryError, NoSuchPathError) as e:
             print(e)
     return res

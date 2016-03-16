@@ -3,11 +3,12 @@
     {% block content %}
 
     <h2> Репозитарии</h2>
+
     <ul>
         {% for r in repo %}
-            <li><p><a href="#">{{r.name}}</a>
-                <p><small> {{r.desc}} </small>
-                <p><small>Last commit: {{r.date}}  {{r.author}}</small>
+            <li><p><a href="repo/{{r.name}}">{{r.name}}</a>
+                <br><small> {{r.desc}} </small>
+                <br><small>Last commit: {{r.date}}  {{r.author}}</small>
         {% endfor %}
     </ul>
 

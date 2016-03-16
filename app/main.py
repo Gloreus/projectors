@@ -10,7 +10,12 @@ app.config.from_object(DevelopConfig)
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html', repo = data.get_repo())
+    return render_template('index.html', repo=data.get_repo_list())
+
+
+@app.route('/repo/<string:reponame>')
+def repo(reponame):
+    return render_template('repo.html', reponame=reponame, rep_info=data.get_repo_info(reponame))
 
 
 if __name__ == '__main__':

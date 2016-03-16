@@ -1,0 +1,21 @@
+На источнике
+------------
+1. Зходим в plus80w под system
+> CREATE OR REPLACE DIRECTORY test_dir AS 'g:\000\';
+
+2. Из командной строки:
+expdp system/oracle@vbexp full=Y directory=TEST_DIR dumpfile=TESTDB.dmp logfile=expdpTESTDB.log
+
+3. Копируем TESTDB.dmp
+
+На приемнике
+------------
+1. В Database Configuration Assistant Создаем БД с тем же SID
+
+2. Зходим в plus80w под system
+> CREATE OR REPLACE DIRECTORY test_dir AS 'g:\000\';
+
+3. Из командной строки:
+impdp system/oracle@vbexp full=Y directory=TEST_DIR dumpfile=TESTDB.dmp logfile=impdpTESTDB.log
+
+4. Подсовываем на приемник файл паролей PWDVBEXP.ora
